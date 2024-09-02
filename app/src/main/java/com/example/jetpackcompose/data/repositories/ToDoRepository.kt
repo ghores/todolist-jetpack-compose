@@ -2,9 +2,11 @@ package com.example.jetpackcompose.data.repositories
 
 import com.example.jetpackcompose.data.ToDoDao
 import com.example.jetpackcompose.data.models.TodoTask
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
+@ViewModelScoped
 class ToDoRepository @Inject constructor(private val toDoDao: ToDoDao) {
 
     val getAllTasks: Flow<List<TodoTask>> = toDoDao.getAllTasks()
