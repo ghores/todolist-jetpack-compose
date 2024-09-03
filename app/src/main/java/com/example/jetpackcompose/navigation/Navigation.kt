@@ -7,18 +7,27 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.jetpackcompose.navigation.destinations.listComposable
 import com.example.jetpackcompose.navigation.destinations.taskComposable
+import com.example.jetpackcompose.ui.viewmodels.SharedViewModel
 import com.example.jetpackcompose.util.Constants.LIST_SCREEN
 
 @SuppressLint("RememberReturnType")
 @Composable
 fun SetupNavigation(
-    navController: NavHostController
+    navController: NavHostController,
+    sharedViewModel: SharedViewModel
 ) {
     val screen = remember(navController) {
         Screens(navController = navController)
     }
-    NavHost(navController = navController, startDestination = LIST_SCREEN) {
-        listComposable(navigateToTaskScreen = screen.task)
+    NavHost(
+        navController = navController,
+        startDestination = LIST_SCREEN
+    )
+    {
+        listComposable(
+            navigateToTaskScreen = screen.task,
+            sharedViewModel = sharedViewModel
+        )
         taskComposable(navigateToListScreen = screen.list)
     }
 }
