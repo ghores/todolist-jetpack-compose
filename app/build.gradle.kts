@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id ("kotlin-kapt")
-    id ("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -70,18 +70,21 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //Room database
-    implementation (libs.androidx.room.runtime)
+    implementation(libs.androidx.room.runtime)
     //noinspection KaptUsageInsteadOfKsp
-    kapt (libs.androidx.room.compiler)
-    implementation (libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
     //Datastore
-    implementation (libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.preferences)
     //Hilt
-    implementation (libs.hilt.android)
-    kapt (libs.hilt.compiler)
-    implementation (libs.androidx.hilt.navigation.compose)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
     //Compose Navigation
-    implementation (libs.androidx.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
+
+    //System ui controller
+    implementation(libs.accompanist.systemuicontroller)
 }
 // Allow references to generated code
 kapt {
