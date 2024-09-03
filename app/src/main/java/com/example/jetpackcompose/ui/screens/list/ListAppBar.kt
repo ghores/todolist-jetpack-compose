@@ -90,7 +90,7 @@ fun DefaultListAppBar(
     TopAppBar(
         title = {
             Text(
-                text = "Tasks",
+                text = stringResource(R.string.tasks),
                 color = MaterialTheme.colors.topAppBarContentColor
             )
         },
@@ -243,7 +243,7 @@ fun SearchAppBar(
                 Text(
                     modifier = Modifier
                         .alpha(ContentAlpha.medium),
-                    text = "Search",
+                    text = stringResource(R.string.search_placeholder),
                     color = Color.White
                 )
             },
@@ -254,7 +254,6 @@ fun SearchAppBar(
             singleLine = true,
             leadingIcon = {
                 IconButton(
-
                     modifier = Modifier
                         .alpha(ContentAlpha.disabled),
                     onClick = {}
@@ -274,6 +273,7 @@ fun SearchAppBar(
                                 onTextChange("")
                                 trailingIconState = TrailingIconState.READY_TO_CLOSE
                             }
+
                             TrailingIconState.READY_TO_CLOSE -> {
                                 if (text.isNotEmpty()) {
                                     onTextChange("")
