@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Jetpack Compose"
+rootProject.name = "Todo App"
 include(":app")
